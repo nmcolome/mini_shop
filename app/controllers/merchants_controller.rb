@@ -26,6 +26,12 @@ class MerchantsController < ApplicationController
     redirect_to "/merchants/#{params[:id]}"
   end
 
+  def destroy
+    Merchant.destroy(params[:id])
+
+    redirect_to '/merchants'
+  end
+
   private_methods
   def merchant_params
     params.require(:merchant).permit(:name, :address, :city, :state, :zip)
