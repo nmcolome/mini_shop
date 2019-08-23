@@ -5,11 +5,11 @@ RSpec.describe 'Merchant update' do
     it "I can update it's information" do
       merchant = Merchant.create!(name: 'Big Store', address: 'address', city: 'denver', state: 'CO', zip:'11111')
 
-      visit "/merchant/#{merchant.id}"
+      visit "/merchants/#{merchant.id}"
 
       click_on 'Update Merchant'
 
-      expect(current_path).to eq("/merchant/#{merchant.id}"/edit)
+      expect(current_path).to eq("/merchants/#{merchant.id}"/edit)
       expect(find_field('merchant[name]').value).to eq(merchant.name)
       expect(find_field('merchant[address]').value).to eq(merchant.address)
       expect(find_field('merchant[city]').value).to eq(merchant.city)
@@ -20,7 +20,7 @@ RSpec.describe 'Merchant update' do
       fill_in 'merchant[zip]', with: '12345'
       click_on 'Update'
 
-      expect(current_path).to eq("/merchant/#{merchant.id}")
+      expect(current_path).to eq("/merchants/#{merchant.id}")
     end
   end
 end
