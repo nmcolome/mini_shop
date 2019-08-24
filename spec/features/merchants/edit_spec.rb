@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Merchant update' do
   describe 'When I visit a merchant show page' do
     it "I can update it's information" do
-      merchant = Merchant.create!(name: 'Big Store', address: 'address', city: 'denver', state: 'CO', zip:'11111')
+      merchant = create(:merchant)
 
       visit "/merchants/#{merchant.id}"
 
