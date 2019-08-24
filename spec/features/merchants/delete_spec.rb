@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Merchant delete' do
   describe 'When I visit a merchant show page' do
     it 'I can delete the merchant' do
-      merchant = Merchant.create!(name: 'Big Store', address: 'address', city: 'denver', state: 'CO', zip:'11111')
-      merchant2 = Merchant.create!(name: 'Small Store')
+      merchant = create(:merchant)
+      merchant2 = create(:merchant, name: 'Small Store')
 
       visit "merchants/#{merchant.id}"
 
