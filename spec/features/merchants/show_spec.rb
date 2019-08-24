@@ -14,12 +14,3 @@ RSpec.describe 'Merchants show page' do
     expect(page).to have_content(merchant.zip)
   end
 end
-
-# As a visitor
-# When I visit '/merchants/:id'
-# Then I see the merchant with that id including the merchant's:
-# - name
-# - address
-# - city
-# - state
-# - zip
