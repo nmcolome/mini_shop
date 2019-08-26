@@ -11,7 +11,7 @@ FactoryBot.define do
     name { 'a product' }
     description { 'Very useful for doing the thing you want' }
     price { 99.99 }
-    # image { }
+    image { 'https://placehold.it/300x300.jpg' }
     inventory { 100 }
     merchant
   end

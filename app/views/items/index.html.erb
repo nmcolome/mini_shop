@@ -1,5 +1,5 @@
 <% @items.each do |item| %>
-  <%= item.image %>
+  <%= image_tag item.image, alt: 'product image' %>
   <%= item.name %>
   <%= item.description %>
   <%= item.price %>
