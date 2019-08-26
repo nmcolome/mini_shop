@@ -1,9 +1,9 @@
 <% @items.each do |item| %>
   <%= image_tag item.image, alt: 'product image' %>
   <%= item.name %>
-  <%= item.description %>
+  <%= item.description if params[:merchant_id].nil? %>
   <%= item.price %>
   <%= item.status %>
   <%= item.inventory %>
-  <%= item.merchant.name %>
+  <%= item.merchant.name if params[:merchant_id].nil? %>
 <% end %>

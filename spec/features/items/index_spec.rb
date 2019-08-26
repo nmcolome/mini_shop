@@ -5,6 +5,7 @@ RSpec.describe 'Items index page' do
     @merchant = create(:merchant)
     @item1 = create(:item, merchant_id: @merchant.id)
     @item2 = create(:item, name: 'good product', status: 'inactive', merchant_id: @merchant.id)
+    @item3 = create(:item, name: 'other product')
   end
 
   describe "When I visit '/items'" do
@@ -13,6 +14,7 @@ RSpec.describe 'Items index page' do
 
       expect(page).to have_content('a product')
       expect(page).to have_content('good product')
+      expect(page).to have_content('other product')
       expect(page).to have_content('Very useful for doing the thing you want')
       expect(page).to have_content(99.99)
       expect(page).to have_css("img[src*='https://placehold.it/300x300.jpg']")
@@ -34,6 +36,9 @@ RSpec.describe 'Items index page' do
       expect(page).to have_content('active')
       expect(page).to have_content('inactive')
       expect(page).to have_content(100)
+      expect(page).to_not have_content('other product')
+      expect(page).to_not have_content('Very useful for doing the thing you want')
+      expect(page).to_not have_content(@merchant.name)
     end
   end
 end
