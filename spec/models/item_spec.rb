@@ -15,10 +15,3 @@ RSpec.describe Item do
     it { is_expected.to respond_to :merchant_id }
   end
 end
-
-# - description
-# - price
-# - image
-# - active/inactive status
-# - inventory
-# - the name of the merchant that sells the item
