@@ -39,5 +39,13 @@ RSpec.describe 'Items index page' do
       expect(page).to_not have_content('other product')
       expect(page).to_not have_content(@merchant.name)
     end
+
+    it 'I can access it through the Merchant show page' do
+      visit "/merchants/#{@merchant.id}"
+
+      click_on 'Merchant Items'
+
+      expect(current_path).to eq("/merchants/#{@merchant.id}/items")
+    end
   end
 end

@@ -2,9 +2,9 @@
 <%= @item.status %>
 <%= @item.price %>
 <%= @item.description %>
-<%= @item.image %>
+<%= image_tag @item.image, alt: 'item image' %>
 <%= @item.inventory %>
-<%= @item.merchant.name %>
+<%= link_to @item.merchant.name, "/merchants/#{@item.merchant_id}" %>
 
 <%= link_to 'Update Item', "/items/#{@item.id}/edit" %>
 <%= link_to 'Delete Item', "/items/#{@item.id}", method: :delete %>
