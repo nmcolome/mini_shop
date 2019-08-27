@@ -12,19 +12,19 @@ RSpec.describe 'Item creation' do
 
       expect(current_path).to eq("/merchants/#{merchant.id}/items/new")
 
-      fill_in 'item[name]', with: attributes.name
-      fill_in 'item[price]', with: attributes.price
-      fill_in 'item[description]', with: attributes.description
-      fill_in 'item[image]', with: attributes.image
-      fill_in 'item[inventory]', with: attributes.inventory
+      fill_in 'item[name]', with: attributes[:name]
+      fill_in 'item[price]', with: attributes[:price]
+      fill_in 'item[description]', with: attributes[:description]
+      fill_in 'item[image]', with: attributes[:image]
+      fill_in 'item[inventory]', with: attributes[:inventory]
       click_on 'Create'
 
       expect(current_path).to eq("/merchants/#{merchant.id}/items")
       expect(page).to have_content('active')
-      expect(page).to have_content(attributes.name)
-      expect(page).to have_content(attributes.description)
-      expect(page).to have_content(attributes.inventory)
-      expect(page).to have_css("img[src*=#{attributes.image}]")
+      expect(page).to have_content(attributes[:name])
+      expect(page).to have_content(attributes[:description])
+      expect(page).to have_content(attributes[:inventory])
+      expect(page).to have_css("img[src*='#{attributes[:image]}']")
     end
   end
 end

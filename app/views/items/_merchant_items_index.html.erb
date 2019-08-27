@@ -1,0 +1,10 @@
+<% @items.each do |item| %>
+  <%= image_tag item.image, alt: 'product image' %>
+  <%= item.name %>
+  <%= item.description %>
+  <%= item.price %>
+  <%= item.status %>
+  <%= item.inventory %>
+<% end %>
+
+<%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new" %>
