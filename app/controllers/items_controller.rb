@@ -26,10 +26,15 @@ class ItemsController < ApplicationController
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update!(item_params)
+    Item.update(item_params)
 
-    redirect_to "/items/#{item.id}"
+    redirect_to "/items/#{params[:id]}"
+  end
+
+  def destroy
+    Item.destroy(params[:id])
+
+    redirect_to '/items'
   end
 
   private
