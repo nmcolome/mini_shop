@@ -2,7 +2,7 @@
 <%= @item.status %>
 <%= @item.price %>
 <%= @item.description %>
-<%= @item.image %>
+<%= image_tag @item.image, alt: 'item image' %>
 <%= @item.inventory %>
 <%= link_to @item.merchant.name, "/merchants/#{@item.merchant_id}" %>
 
