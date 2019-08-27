@@ -13,25 +13,29 @@ RSpec.describe 'Item Update' do
       expect(page).to have_content('Name')
       expect(find_field('item[name]').value).to eq(item.name)
       expect(page).to have_content('Price')
-      expect(find_field('item[price]').value).to eq(item.price)
+      expect(find_field('item[price]').value).to eq(item.price.to_s)
       expect(page).to have_content('Description')
       expect(find_field('item[description]').value).to eq(item.description)
       expect(page).to have_content('Image')
       expect(find_field('item[image]').value).to eq(item.image)
       expect(page).to have_content('Inventory')
-      expect(find_field('item[inventory]').value).to eq(item.inventory)
+      expect(find_field('item[inventory]').value).to eq(item.inventory.to_s)
+      expect(page).to have_content('Status')
+      expect(find_field('item[status]').value).to eq('active')
 
       fill_in 'item[description]', with: 'new description'
       fill_in 'item[price]', with: 9.98
       fill_in 'item[inventory]', with: 900
+      select 'inactive', from: 'item[status]'
       click_on 'Update'
 
-      expect(current_paht).to eq("/items/#{item.id}")
+      expect(current_path).to eq("/items/#{item.id}")
       expect(page).to have_content('new description')
-      expect(page).to have_content(9.99)
-      expect(page).to have_content(900)
-      expect(page).to_not have_content(100)
-      expect(page).to_not have_content(99.99)
+      expect(page).to have_content('9.98')
+      expect(page).to have_content('900')
+      expect(page).to have_content('inactive')
+      expect(page).to_not have_content('100')
+      expect(page).to_not have_content('99.99')
       expect(page).to_not have_content('Very useful for doing the thing you want')
     end
   end

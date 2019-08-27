@@ -1,0 +1,21 @@
+<%= form_tag "/items/#{@item.id}", method: :patch do %>
+  <%= label_tag 'name' %>
+  <%= text_field_tag 'item[name]', @item.name %>
+
+  <%= label_tag 'description' %>
+  <%= text_field_tag 'item[description]', @item.description %>
+
+  <%= label_tag 'price' %>
+  <%= text_field_tag 'item[price]', @item.price %>
+
+  <%= label_tag 'inventory' %>
+  <%= text_field_tag 'item[inventory]', @item.inventory %>
+
+  <%= label_tag 'image' %>
+  <%= text_field_tag 'item[image]', @item.image %>
+
+  <%= label_tag 'status' %>
+  <%= select_tag 'item[status]', options_for_select(Item.statuses.keys, @item.status) %>
+
+  <%= submit_tag 'Update' %>
+<% end %>
