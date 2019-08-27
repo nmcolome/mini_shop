@@ -6,4 +6,13 @@ FactoryBot.define do
     state { 'CO' }
     zip { '01010' }
   end
+
+  factory :item do
+    name { 'a product' }
+    description { 'Very useful for doing the thing you want' }
+    price { 99.99 }
+    image { 'https://placehold.it/300x300.jpg' }
+    inventory { 100 }
+    merchant
+  end
 end

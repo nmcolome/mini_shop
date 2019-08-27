@@ -8,4 +8,8 @@ RSpec.describe Merchant do
     it { is_expected.to respond_to :state }
     it { is_expected.to respond_to :zip }
   end
+
+  describe 'relationships' do
+    it { should have_many :items }
+  end
 end

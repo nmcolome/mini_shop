@@ -1,0 +1,13 @@
+<% if params[:merchant_id].nil? %>
+  <% @items.each do |item| %>
+    <%= image_tag item.image, alt: 'product image' %>
+    <%= item.name %>
+    <%= item.description if params[:merchant_id].nil? %>
+    <%= item.price %>
+    <%= item.status %>
+    <%= item.inventory %>
+    <%= item.merchant.name if params[:merchant_id].nil? %>
+  <% end %>
+<% else %>
+  <%= render "merchant_items_index" %>
+<% end %>
