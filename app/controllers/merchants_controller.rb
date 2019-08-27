@@ -32,7 +32,8 @@ class MerchantsController < ApplicationController
     redirect_to '/merchants'
   end
 
-  private_methods
+  private
+
   def merchant_params
     params.require(:merchant).permit(:name, :address, :city, :state, :zip)
   end
