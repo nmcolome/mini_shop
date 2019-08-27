@@ -1,6 +1,6 @@
 <% @items.each do |item| %>
   <%= image_tag item.image, alt: 'product image' %>
-  <%= item.name %>
+  <%= link_to item.name, "/items/#{item.id}" %>
   <%= item.description %>
   <%= item.price %>
   <%= item.status %>
