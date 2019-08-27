@@ -2,11 +2,11 @@
   <% @items.each do |item| %>
     <%= image_tag item.image, alt: 'product image' %>
     <%= item.name %>
-    <%= item.description if params[:merchant_id].nil? %>
+    <%= item.description %>
     <%= item.price %>
     <%= item.status %>
     <%= item.inventory %>
-    <%= item.merchant.name if params[:merchant_id].nil? %>
+    <%= link_to item.merchant.name, "/merchants/#{item.merchant_id}" %>
   <% end %>
 <% else %>
   <%= render "merchant_items_index" %>
