@@ -6,6 +6,7 @@ RSpec.describe 'Merchants show page' do
     @merchant2 = create(:merchant, name: 'Small Store')
     @item = create(:item, merchant_id: @merchant.id)
   end
+
   it "shows a specific merchant's information" do
     visit "/merchants/#{@merchant.id}"
 
@@ -16,7 +17,7 @@ RSpec.describe 'Merchants show page' do
     expect(page).to have_content(@merchant.zip)
   end
 
-  describe "I visit the merchants index page" do
+  describe 'Merchants show page links' do
     it "When I click on a merchant's name in the merchants index page" do
       visit '/merchants'
 
