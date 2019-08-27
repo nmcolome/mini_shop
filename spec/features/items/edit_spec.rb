@@ -11,15 +11,15 @@ RSpec.describe 'Item Update' do
 
       expect(current_path).to eq("/items/#{item.id}/edit")
       expect(page).to have_content('Name')
-      expect(page).to have_content(item.name)
+      expect(find_field('item[name]').value).to eq(item.name)
       expect(page).to have_content('Price')
-      expect(page).to have_content(item.price)
+      expect(find_field('item[price]').value).to eq(item.price)
       expect(page).to have_content('Description')
-      expect(page).to have_content(item.description)
+      expect(find_field('item[description]').value).to eq(item.description)
       expect(page).to have_content('Image')
-      expect(page).to have_content(item.image)
+      expect(find_field('item[image]').value).to eq(item.image)
       expect(page).to have_content('Inventory')
-      expect(page).to have_content(item.inventory)
+      expect(find_field('item[inventory]').value).to eq(item.inventory)
 
       fill_in 'item[description]', with: 'new description'
       fill_in 'item[price]', with: 9.98
