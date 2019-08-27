@@ -9,8 +9,13 @@
   </head>
 
   <body>
-    <%= link_to 'Items', '/items' %>
-    <%= link_to 'Merchants', '/merchants' %>
+    <header>
+      <h1>Mini Shop</h1>
+    </header>
+    <nav class="nav-container">
+      <%= link_to 'Items', '/items', class: "link" %>
+      <%= link_to 'Merchants', '/merchants', class: "link" %>
+    </nav>
     <%= yield %>
   </body>
 </html>
