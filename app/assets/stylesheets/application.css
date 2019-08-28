@@ -13,6 +13,6 @@
  *= require_tree .
  *= require_self
  */
-require_items_index
-require_navigation
+require_index_cards
+require_links
 require_general

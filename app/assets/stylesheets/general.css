@@ -9,13 +9,25 @@
   font-family: 'Avenir Next', sans-serif;
 }
 
+header {
+  height: 150px;
+  display: flex;
+  background-color: #BDBDBD;
+  padding: 25px;
+}
+
 h1 {
   color: #551A8B;
   font-weight: bold;
   font-size: 400%;
-  background-color: #BDBDBD;
-  padding: 25px;
 }
+
+.logo {
+  height: 50%;
+  margin-top: 50px;
+  transform: rotate(-10deg)
+}
+
 
 a {
   text-decoration: none;
