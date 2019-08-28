@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   def index
     @items = if params[:merchant_id].nil?
-               Item.all
+               Item.all.page params[:page]
              else
-               Merchant.find(params[:merchant_id]).items
+               Merchant.find(params[:merchant_id]).items.page params[:page]
              end
   end
 

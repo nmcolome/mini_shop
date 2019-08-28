@@ -3,15 +3,19 @@
     <% @items.each do |item| %>
       <div class="card">
         <%= image_tag item.image, alt: 'product image' %>
-        <%= link_to item.name, "/items/#{item.id}" %>
-        <%= item.description %>
-        <%= item.price %>
-        <%= item.status %>
-        <%= item.inventory %>
-        <%= link_to item.merchant.name, "/merchants/#{item.merchant_id}" %>
+        <p>Price: $<%= item.price %></p>
+        <br>
+        <%= link_to item.name, "/items/#{item.id}", class: "title-links" %>
+        <p><%= item.description %></p>
+        <p>Sold by: <%= link_to item.merchant.name, "/merchants/#{item.merchant_id}", class: "inline-links" %></p>
+        <br>
+        <p>Status: <%= item.status %></p>
+        <p>Inventory: <%= item.inventory %> items</p>
       </div>
     <% end %>
   <% else %>
     <%= render "merchant_items_index" %>
   <% end %>
 </div>
+
+<%= paginate @items %>
