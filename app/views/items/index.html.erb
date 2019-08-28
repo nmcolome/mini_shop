@@ -2,15 +2,17 @@
   <% if params[:merchant_id].nil? %>
     <% @items.each do |item| %>
       <div class="card">
-        <%= image_tag item.image, alt: 'product image' %>
-        <p>Price: $<%= item.price %></p>
-        <br>
-        <%= link_to item.name, "/items/#{item.id}", class: "title-links" %>
-        <p><%= item.description %></p>
-        <p>Sold by: <%= link_to item.merchant.name, "/merchants/#{item.merchant_id}", class: "inline-links" %></p>
-        <br>
-        <p>Status: <%= item.status %></p>
-        <p>Inventory: <%= item.inventory %> items</p>
+        <%= image_tag item.image, alt: 'product image', class: "index-img" %>
+        <div class="card-details">
+          <p class="price">Price: $<%= item.price %></p>
+          <br>
+          <%= link_to item.name, "/items/#{item.id}", class: "title-links" %>
+          <p><%= item.description %></p>
+          <br>
+          <p>Sold by: <%= link_to item.merchant.name, "/merchants/#{item.merchant_id}", class: "inline-links" %></p>
+          <p>Status: <%= item.status %></p>
+          <p>Inventory: <%= item.inventory %> items</p>
+        </div>
       </div>
     <% end %>
   <% else %>
