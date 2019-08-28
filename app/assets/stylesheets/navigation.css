@@ -24,6 +24,10 @@
   font-weight: 500;
 }
 
+.link:hover {
+  color: #7C4DFF;
+}
+
 .title-links:hover {
   color: #7C4DFF;
 }
