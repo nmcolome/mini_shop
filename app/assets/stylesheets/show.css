@@ -1,0 +1,28 @@
+.data-container {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  border-radius: 5px;
+  height: 350px;
+}
+
+.show-img {
+  border-radius: 5px 0 0 5px;
+  height: 100%;
+}
+
+.data-card {
+  padding: 25px 80px;
+}
+
+.details {
+  color: #757575;
+  font-size: 110%;
+  margin-bottom: 30px;
+}
+
+.title {
+  color: #212121;
+  font-weight: 500;
+  font-size: 150%;
+}
