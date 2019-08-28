@@ -11,7 +11,7 @@ form {
 .input {
   border: 1.5px solid #BDBDBD;
   border-radius: 5px;
-  margin: 8px 0 20px;
+  margin: 8px 0 16px;
   padding: 4px 0 4px 8px;
 }
 
@@ -27,4 +27,17 @@ form {
   border: 1.5px solid #7C4DFF;
   background-color: #ede7f6;
   outline: none;
+}
+
+.button-form {
+  width: 70%;
+  margin: 16px auto 8px;;
+}
+
+.page-title {
+  font-size: 180%;
+  text-align: center;
+  padding-bottom: 16px;
+  color: #551A8B;
+  font-weight: bold;
 }
