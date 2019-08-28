@@ -1,5 +1,5 @@
-<div class="card-container">
-  <% if params[:merchant_id].nil? %>
+<% if params[:merchant_id].nil? %>
+  <div class="card-container">
     <% @items.each do |item| %>
       <div class="card">
         <%= image_tag item.image, alt: 'product image', class: "index-img" %>
@@ -15,9 +15,9 @@
         </div>
       </div>
     <% end %>
-  <% else %>
-    <%= render "merchant_items_index" %>
-  <% end %>
-</div>
+  </div>
+<% else %>
+  <%= render "merchant_items_index" %>
+<% end %>
 
 <%= paginate @items %>

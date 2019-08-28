@@ -1,10 +1,20 @@
-<% @items.each do |item| %>
-  <%= image_tag item.image, alt: 'product image' %>
-  <%= link_to item.name, "/items/#{item.id}" %>
-  <%= item.description %>
-  <%= item.price %>
-  <%= item.status %>
-  <%= item.inventory %>
-<% end %>
+<%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new", class: 'link button new' %>
 
-<%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new" %>
+<div class="card-container">
+  <% @items.each do |item| %>
+    <div class="card">
+      <%= image_tag item.image, alt: 'product image', class: "index-img" %>
+      <div class="card-details">
+        <p class="price">Price: $<%= item.price %></p>
+        <br>
+        <%= link_to item.name, "/items/#{item.id}", class: "title-links" %>
+        <p><%= item.description %></p>
+        <br>
+        <p>Status: <%= item.status %></p>
+        <p>Inventory: <%= item.inventory %> items</p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%= paginate @items %>
