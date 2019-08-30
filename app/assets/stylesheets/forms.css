@@ -41,3 +41,18 @@ form {
   color: #551A8B;
   font-weight: bold;
 }
+
+.dropdown {
+  margin-left: 8px;
+  text-transform: capitalize;
+  border: 1.5px solid #ede7f6;
+  width: 25%;
+}
+
+.dropdown:hover {
+  border: 1.5px solid #7C4DFF;
+}
+
+.dropdown:focus {
+  outline: none;
+}

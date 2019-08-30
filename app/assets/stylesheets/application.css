@@ -13,8 +13,9 @@
  *= require_tree .
  *= require_self
  */
-require_index_cards
-require_links
-require_buttons
-require_forms
-require_general
+
+@import 'general.css';
+@import 'index_cards.css';
+@import 'links.css';
+@import 'buttons.css';
+@import 'forms.css';

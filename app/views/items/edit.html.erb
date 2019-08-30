@@ -18,9 +18,10 @@
   <%= label_tag 'image' %>
   <%= text_field_tag 'item[image]', @item.image, class: 'input' %>
 
-  <%= label_tag 'active' %>
-  <%= check_box_tag 'item[status]', @item.status, (@item.status == 'active'), class: 'toggle' %>
-  <%= label_tag 'item[status]', '', class: 'toggle-slider' %>
+  <div>
+    <%= label_tag 'status' %>
+    <%= select_tag 'item[status]', options_for_select(Item.statuses.keys, @item.status), class: 'dropdown' %>
+  </div>
 
   <%= submit_tag 'Update', class: 'button new button-form' %>
 <% end %>
