@@ -22,3 +22,40 @@
 .delete:hover {
   background-color: #F44336;
 }
+
+.toggle {
+  display: none;
+}
+
+.toggle-slider {
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 2em;
+  padding: 2.5px;
+  transition: all .2s ease;
+}
+
+.toggle-slider:after {
+  position: relative;
+  display: block;
+  content: "";
+  font-size: 70%;
+  width: 50%;
+  height: 100%;
+}
+
+.toggle:checked + .toggle-slider:after {
+  left: 50%;
+}
+
+.toggle-slider:after {
+  border-radius: 50%;
+  background: white;
+}
+
+.toggle:checked + .toggle-slider {
+  background-color: green;
+}

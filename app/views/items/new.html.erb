@@ -1,9 +1,12 @@
 <h2 class='page-title'>New Item</h2>
+
 <%= form_tag "/merchants/#{params[:merchant_id]}/items" do %>
   <%= label_tag 'name' %>
   <%= text_field_tag 'item[name]', nil, placeholder: 'Your product name...', class: 'input' %>
 
-  <div><%= label_tag 'price' %> (USD)</div>
+  <div>
+    <%= label_tag 'price' %> (USD)
+  </div>
   <%= number_field_tag 'item[price]', nil, class: 'input', step: 0.01 %>
 
   <%= label_tag 'description' %>

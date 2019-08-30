@@ -1,21 +1,26 @@
+<h2 class='page-title'>Update Item</h2>
+
 <%= form_tag "/items/#{@item.id}", method: :patch do %>
   <%= label_tag 'name' %>
-  <%= text_field_tag 'item[name]', @item.name %>
+  <%= text_field_tag 'item[name]', @item.name, class: 'input' %>
 
   <%= label_tag 'description' %>
-  <%= text_field_tag 'item[description]', @item.description %>
+  <%= text_area_tag 'item[description]', @item.description, class: 'input' %>
 
-  <%= label_tag 'price' %>
-  <%= text_field_tag 'item[price]', @item.price %>
+  <div>
+    <%= label_tag 'price' %> (USD)
+  </div>
+  <%= number_field_tag 'item[price]', @item.price, class: 'input', step: 0.01 %>
 
   <%= label_tag 'inventory' %>
-  <%= text_field_tag 'item[inventory]', @item.inventory %>
+  <%= number_field_tag 'item[inventory]', @item.inventory, class: 'input' %>
 
   <%= label_tag 'image' %>
-  <%= text_field_tag 'item[image]', @item.image %>
+  <%= text_field_tag 'item[image]', @item.image, class: 'input' %>
 
-  <%= label_tag 'status' %>
-  <%= select_tag 'item[status]', options_for_select(Item.statuses.keys, @item.status) %>
+  <%= label_tag 'active' %>
+  <%= check_box_tag 'item[status]', @item.status, (@item.status == 'active'), class: 'toggle' %>
+  <%= label_tag 'item[status]', '', class: 'toggle-slider' %>
 
-  <%= submit_tag 'Update' %>
+  <%= submit_tag 'Update', class: 'button new button-form' %>
 <% end %>
