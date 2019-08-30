@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    Item.update(item_params)
+    Item.find(params[:id]).update(item_params)
 
     redirect_to "/items/#{params[:id]}"
   end
