@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+  font-family: 'Avenir Next', sans-serif;
+}
+
+header {
+  height: 150px;
+  display: flex;
+  background-color: #BDBDBD;
+  padding: 25px;
+}
+
+h1 {
+  color: #551A8B;
+  font-weight: bold;
+  font-size: 400%;
+}
+
+.logo {
+  height: 50%;
+  margin-top: 50px;
+  transform: rotate(-10deg)
+}
+
+
+a {
+  text-decoration: none;
+}
+
+section {
+  padding: 25px 25px;
+}
+
+.page-name {
+  font-size: 300%;
+  text-align: center;
+  font-weight: 600;
+}

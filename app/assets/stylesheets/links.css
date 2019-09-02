@@ -1,0 +1,36 @@
+.nav-container {
+  display: flex;
+  background-color: #DEDDE2;
+  opacity: 0.8;
+  padding: 10px 0px;
+  padding-left: 25px;
+}
+
+.link {
+  color: #551A8B;
+  margin-right: 30px;
+  font-size: 200%;
+}
+
+.title-links {
+  /* color: #B73A5D; */
+  color: #551A8B;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.inline-links {
+  color: #551A8B;
+}
+
+.link:hover {
+  color: #7C4DFF;
+}
+
+.title-links:hover {
+  color: #7C4DFF;
+}
+
+.inline-links:hover {
+  color: #7C4DFF;
+}

@@ -9,8 +9,16 @@
   </head>
 
   <body>
-    <%= link_to 'Items', '/items' %>
-    <%= link_to 'Merchants', '/merchants' %>
-    <%= yield %>
+    <header>
+      <h1>Mini Shop</h1>
+      <%= image_tag 'open.svg', alt: 'logo', class: 'logo' %>
+    </header>
+    <nav class="nav-container">
+      <%= link_to 'Items', '/items', class: 'link' %>
+      <%= link_to 'Merchants', '/merchants', class: 'link' %>
+    </nav>
+    <section>
+      <%= yield %>
+    </section>
   </body>
 </html>

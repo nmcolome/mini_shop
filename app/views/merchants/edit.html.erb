@@ -1,18 +1,20 @@
+<h2 class='page-title'>Update Merchant</h2>
+
 <%= form_tag "/merchants/#{@merchant.id}", method: :patch do %>
   <%= label_tag 'name' %>
-  <%= text_field_tag 'merchant[name]', "#{@merchant.name}" %>
+  <%= text_field_tag 'merchant[name]', "#{@merchant.name}", class: 'input' %>
 
   <%= label_tag 'address' %>
-  <%= text_field_tag 'merchant[address]', "#{@merchant.address}" %>
+  <%= text_field_tag 'merchant[address]', "#{@merchant.address}", class: 'input' %>
 
   <%= label_tag 'city' %>
-  <%= text_field_tag 'merchant[city]', "#{@merchant.city}" %>
+  <%= text_field_tag 'merchant[city]', "#{@merchant.city}", class: 'input' %>
 
   <%= label_tag 'state' %>
-  <%= text_field_tag 'merchant[state]', "#{@merchant.state}" %>
+  <%= select_tag 'merchant[state]', options_for_select(Merchant.states.keys, @merchant.state), class: 'dropdown states-list' %>
 
   <%= label_tag 'zip' %>
-  <%= text_field_tag 'merchant[zip]', "#{@merchant.zip}" %>
+  <%= text_field_tag 'merchant[zip]', "#{@merchant.zip}", class: 'input' %>
 
-  <%= submit_tag 'Update' %>
+  <%= submit_tag 'Update', class: 'button new button-form' %>
 <% end %>

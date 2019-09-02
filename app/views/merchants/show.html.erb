@@ -1,9 +1,13 @@
-<h2><%= @merchant.name %></h2>
-<p><%= @merchant.address %></p>
-<p><%= @merchant.city %></p>
-<p><%= @merchant.state %></p>
-<p><%= @merchant.zip %></p>
+<div class='card-details merchant-info'>
+  <h2 class="title"><%= @merchant.name %></h2>
+  <p>Address: <%= @merchant.address %></p>
+  <p>City: <%= @merchant.city %></p>
+  <p>State: <%= @merchant.state %></p>
+  <p>Zip: <%= @merchant.zip %></p>
+</div>
 
-<%= link_to 'Merchant Items', "/merchants/#{@merchant.id}/items" %>
-<%= link_to 'Update Merchant', "/merchants/#{@merchant.id}/edit" %>
-<%= link_to 'Delete Merchant', "/merchants/#{@merchant.id}", method: :delete %>
+<div class="buttons">
+  <%= link_to 'Merchant Items', "/merchants/#{@merchant.id}/items", class: 'button edit' %>
+  <%= link_to 'Update Merchant', "/merchants/#{@merchant.id}/edit", class: 'button new' %>
+  <%= link_to 'Delete Merchant', "/merchants/#{@merchant.id}", method: :delete, class: 'delete button' %>
+</div>

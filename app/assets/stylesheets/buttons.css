@@ -1,0 +1,24 @@
+.button {
+  border-radius: 15px;
+  padding: 5px 20px;
+  color: #ffffff;
+  font-size: 180%;
+}
+
+.new,
+.edit {
+  background-color: #551A8B;
+}
+
+.new:hover,
+.edit:hover {
+  background-color: #7C4DFF;
+}
+
+.delete {
+  background-color: #d32f2f;
+}
+
+.delete:hover {
+  background-color: #F44336;
+}

@@ -1,9 +1,9 @@
 class ItemsController < ApplicationController
   def index
     @items = if params[:merchant_id].nil?
-               Item.all
+               Item.all.page params[:page]
              else
-               Merchant.find(params[:merchant_id]).items
+               Merchant.find(params[:merchant_id]).items.page params[:page]
              end
   end
 
@@ -26,7 +26,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    Item.update(item_params)
+    Item.find(params[:id]).update(item_params)
 
     redirect_to "/items/#{params[:id]}"
   end

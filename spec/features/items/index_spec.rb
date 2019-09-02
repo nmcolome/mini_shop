@@ -37,7 +37,6 @@ RSpec.describe 'Items index page' do
       expect(page).to have_content('inactive')
       expect(page).to have_content(100)
       expect(page).to_not have_content('other product')
-      expect(page).to_not have_content(@merchant.name)
     end
 
     it 'I can access it through the Merchant show page' do

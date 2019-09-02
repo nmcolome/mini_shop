@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+
+ @import 'general.css';
+ @import 'index_cards.css';
+ @import 'links.css';
+ @import 'buttons.css';
+ @import 'forms.css';
+ @import 'lists.css';
+ @import 'show.css';

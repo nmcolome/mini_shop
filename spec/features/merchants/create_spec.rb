@@ -7,14 +7,14 @@ RSpec.describe 'New Merchant' do
 
       visit '/merchants'
 
-      click_on 'New Merchant'
+      click_on 'Add New Merchant'
 
       expect(current_path).to eq('/merchants/new')
 
       fill_in 'merchant[name]', with: attrs[:name]
       fill_in 'merchant[address]', with: attrs[:address]
       fill_in 'merchant[city]', with: attrs[:city]
-      fill_in 'merchant[state]', with: attrs[:state]
+      select attrs[:state], from: 'merchant[state]'
       fill_in 'merchant[zip]', with: attrs[:zip]
       click_on 'Create'
 

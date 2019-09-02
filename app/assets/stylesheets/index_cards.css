@@ -1,0 +1,45 @@
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  height: auto;
+}
+
+.card {
+  border-radius: 5px;
+  width: 22%;
+  margin: 25px 22px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card-details {
+  margin: 10px;
+  color: #757575;
+}
+
+.price {
+  color: #212121;
+  font-size: 110%;
+}
+
+.card img {
+  border-radius: 5px 5px 0 0;
+  width: 100%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.pagination {
+  text-align: center;
+  font-size: 125%;
+}
+
+.pagination span a {
+  color: #757575;
+}
+
+.pagination span a:hover {
+  color: #7C4DFF;
+}
