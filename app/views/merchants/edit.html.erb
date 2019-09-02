@@ -11,7 +11,7 @@
   <%= text_field_tag 'merchant[city]', "#{@merchant.city}", class: 'input' %>
 
   <%= label_tag 'state' %>
-  <%= select_tag 'merchant[state]', options_for_select(Merchant.states.keys), class: 'dropdown states-list' %>
+  <%= select_tag 'merchant[state]', options_for_select(Merchant.states.keys, @merchant.state), class: 'dropdown states-list' %>
 
   <%= label_tag 'zip' %>
   <%= text_field_tag 'merchant[zip]', "#{@merchant.zip}", class: 'input' %>
