@@ -1,3 +1,5 @@
+
+<h1 class="page-name"><%=link_to Merchant.find(params[:merchant_id]).name+"'s", "/merchants/#{params[:merchant_id]}", class: 'inline-links' %> Items List</h1>
 <%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new", class: 'button new' %>
 
 <div class="card-container">

@@ -1,5 +1,8 @@
-<%= link_to 'New Merchant', '/merchants/new' %>
+<h1 class="page-name">Merchant List</h1>
+<%= link_to 'Add New Merchant', '/merchants/new', class: 'button new' %>
 
-<% @merchants.each do |merchant| %>
-  <h2><%= link_to merchant.name, "/merchants/#{merchant.id}" %></h2>
-<% end %>
+<div class="list-container">
+  <% @merchants.each do |merchant| %>
+    <h2><%= link_to merchant.name, "/merchants/#{merchant.id}", class: 'link list-merchant' %></h2>
+  <% end %>
+</div>

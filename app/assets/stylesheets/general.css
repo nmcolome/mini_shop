@@ -36,3 +36,9 @@ a {
 section {
   padding: 25px 25px;
 }
+
+.page-name {
+  font-size: 300%;
+  text-align: center;
+  font-weight: 600;
+}
