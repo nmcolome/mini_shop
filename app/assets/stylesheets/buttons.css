@@ -5,6 +5,10 @@
   font-size: 180%;
 }
 
+.buttons {
+  margin-top: 24px;
+}
+
 .new,
 .edit {
   background-color: #551A8B;

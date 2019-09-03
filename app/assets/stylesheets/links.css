@@ -23,14 +23,8 @@
   color: #551A8B;
 }
 
-.link:hover {
-  color: #7C4DFF;
-}
-
-.title-links:hover {
-  color: #7C4DFF;
-}
-
+.link:hover,
+.title-links:hover,
 .inline-links:hover {
   color: #7C4DFF;
 }

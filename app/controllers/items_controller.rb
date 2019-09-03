@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   def index
     @items = if params[:merchant_id].nil?
                Item.all.page params[:page]
+             elsif params[:active] == 'true'
+               Merchant.find(params[:merchant_id]).items.active.page params[:page]
+             elsif params[:active] == 'false'
+               Merchant.find(params[:merchant_id]).items.inactive.page params[:page]
              else
                Merchant.find(params[:merchant_id]).items.page params[:page]
              end

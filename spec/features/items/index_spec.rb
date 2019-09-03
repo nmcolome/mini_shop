@@ -5,6 +5,7 @@ RSpec.describe 'Items index page' do
     @merchant = create(:merchant)
     @item1 = create(:item, merchant_id: @merchant.id)
     @item2 = create(:item, name: 'good product', status: 'inactive', merchant_id: @merchant.id)
+    @item2 = create(:item, name: 'so-so product', merchant_id: @merchant.id)
     @item3 = create(:item, name: 'other product')
   end
 
@@ -31,6 +32,7 @@ RSpec.describe 'Items index page' do
 
       expect(page).to have_content('a product')
       expect(page).to have_content('good product')
+      expect(page).to have_content('so-so product')
       expect(page).to have_content(99.99)
       expect(page).to have_css("img[src*='https://placehold.it/300x300.jpg']")
       expect(page).to have_content('active')
@@ -45,6 +47,44 @@ RSpec.describe 'Items index page' do
       click_on 'Merchant Items'
 
       expect(current_path).to eq("/merchants/#{@merchant.id}/items")
+    end
+
+    context "I can filter based on an items' status" do
+      it 'Filters active items' do
+        visit "/merchants/#{@merchant.id}/items"
+  
+        click_on 'Show only active items'
+  
+        expect(page).to have_current_path("/merchants/#{@merchant.id}/items?active=true")
+  
+        expect(page).to have_content('a product')
+        expect(page).to have_content('so-so product')
+        expect(page).to_not have_content('good product')
+      end
+
+      it 'Filter inactive items' do
+        visit "/merchants/#{@merchant.id}/items"
+
+        click_on 'Show only inactive items'
+  
+        expect(page).to have_current_path("/merchants/#{@merchant.id}/items?active=false")
+  
+        expect(page).to have_content('good product')
+        expect(page).to_not have_content('a product')
+        expect(page).to_not have_content('so-so product')
+      end
+
+      it 'Remove filters' do
+        visit "/merchants/#{@merchant.id}/items"
+
+        click_on 'Show all'
+  
+        expect(page).to have_current_path("/merchants/#{@merchant.id}/items")
+  
+        expect(page).to have_content('good product')
+        expect(page).to have_content('a product')
+        expect(page).to have_content('so-so product')
+      end
     end
   end
 end
