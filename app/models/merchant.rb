@@ -1,6 +1,12 @@
 class Merchant < ApplicationRecord
   has_many :items
 
+  validates :name, presence: true
+  validates :address, presence: true
+  validates :city, presence: true
+  validates :state, presence: true
+  validates :zip, presence: true
+
   def self.states
     {
       AL: 'Alabama',
