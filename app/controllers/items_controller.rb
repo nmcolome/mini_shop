@@ -2,6 +2,10 @@ class ItemsController < ApplicationController
   def index
     @items = if params[:merchant_id].nil?
                Item.all.page params[:page]
+             elsif params[:active] == 'true'
+               Merchant.find(params[:merchant_id]).items.active.page params[:page]
+             elsif params[:active] == 'false'
+               Merchant.find(params[:merchant_id]).items.inactive.page params[:page]
              else
                Merchant.find(params[:merchant_id]).items.page params[:page]
              end
@@ -26,7 +30,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-    Item.find(params[:id]).update(item_params)
+    @item = Item.find(params[:id])
+    if params[:item].nil?
+      @item.active? ? @item.update!(status: 'inactive') : @item.update!(status: 'active')
+    else
+      @item.update(item_params)
+    end
 
     redirect_to "/items/#{params[:id]}"
   end
@@ -40,6 +49,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, :inventory, :status)
+    params.require(:item).permit(:name, :description, :price, :image, :inventory)
   end
+
 end

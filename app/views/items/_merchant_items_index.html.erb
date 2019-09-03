@@ -1,6 +1,12 @@
 
 <h1 class="page-name"><%=link_to Merchant.find(params[:merchant_id]).name+"'s", "/merchants/#{params[:merchant_id]}", class: 'inline-links' %> Items List</h1>
-<%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new", class: 'button new' %>
+
+<div class="buttons">
+  <%= link_to 'New Item', "/merchants/#{params[:merchant_id]}/items/new", class: 'button new' %>
+  <%= link_to 'Show only active items', "/merchants/#{params[:merchant_id]}/items?active=true", class: 'button new' %>
+  <%= link_to 'Show only inactive items', "/merchants/#{params[:merchant_id]}/items?active=false", class: 'button new' %>
+  <%= link_to 'Show all', "/merchants/#{params[:merchant_id]}/items", class: 'button new' %>
+</div>
 
 <div class="card-container">
   <% @items.each do |item| %>
