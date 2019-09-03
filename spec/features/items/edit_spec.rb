@@ -62,12 +62,3 @@ RSpec.describe 'Item Update' do
     end
   end
 end
-
-# As a visitor
-# When I visit an Item Show page
-# Then I see a link to change the Item's active status
-# Active items should have the link "deactivate"
-# Inactive items should have the link "activate"
-# When I click the link
-# Then a 'PATCH' request is sent to '/items/:id/activate' or 'items/:id/deactivate' (depending on the link)
-# and I am redirected to the Item Show page where I see the active status has been toggled

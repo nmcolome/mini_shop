@@ -24,7 +24,6 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.2'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-gem 'faker'
 gem 'kaminari'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
@@ -44,6 +43,7 @@ group :development, :test do
   gem 'simplecov'
   gem 'shoulda-matchers', '~> 3.1'
   gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 group :development do
