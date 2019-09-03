@@ -24,20 +24,16 @@ RSpec.describe 'Item Update' do
       expect(find_field('item[image]').value).to eq(@item.image)
       expect(page).to have_content('Inventory')
       expect(find_field('item[inventory]').value).to eq(@item.inventory.to_s)
-      # expect(page).to have_content('Status')
-      # expect(find_field('item[status]').value).to eq('active')
 
       fill_in 'item[description]', with: 'new description'
       fill_in 'item[price]', with: 9.98
       fill_in 'item[inventory]', with: 900
-      # select 'inactive', from: 'item[status]'
       click_on 'Update'
 
       expect(current_path).to eq("/items/#{@item.id}")
       expect(page).to have_content('new description')
       expect(page).to have_content('9.98')
       expect(page).to have_content('900')
-      # expect(page).to have_content('inactive')
       expect(page).to_not have_content('100')
       expect(page).to_not have_content('99.99')
       expect(page).to_not have_content('Very useful for doing the thing you want')
@@ -48,7 +44,7 @@ RSpec.describe 'Item Update' do
         visit "/items/#{@item.id}"
         expect(page).to have_content('active')
 
-        click_on 'deactivate'
+        click_on 'Deactivate'
 
         expect(current_path).to eq("/items/#{@item.id}")
         expect(page).to have_content('inactive')
@@ -58,9 +54,9 @@ RSpec.describe 'Item Update' do
         visit "/items/#{@item2.id}"
         expect(page).to have_content('inactive')
 
-        click_on 'activate'
+        click_on 'Activate'
 
-        expect(current_path).to eq("/items/#{@item.id}")
+        expect(current_path).to eq("/items/#{@item2.id}")
         expect(page).to have_content('active')
       end
     end

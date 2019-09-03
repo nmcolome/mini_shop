@@ -30,7 +30,12 @@ class ItemsController < ApplicationController
   end
 
   def update
-    Item.find(params[:id]).update(item_params)
+    @item = Item.find(params[:id])
+    if params[:item].nil?
+      @item.active? ? @item.update!(status: 'inactive') : @item.update!(status: 'active')
+    else
+      @item.update(item_params)
+    end
 
     redirect_to "/items/#{params[:id]}"
   end
@@ -44,6 +49,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :description, :price, :image, :inventory, :status)
+    params.require(:item).permit(:name, :description, :price, :image, :inventory)
   end
+
 end

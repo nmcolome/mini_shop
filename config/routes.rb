@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   get '/items/:id', to: 'items#show'
   get '/items/:id/edit', to: 'items#edit'
   patch '/items/:id', to: 'items#update'
+  patch '/items/:id/activate', to: 'items#update'
+  patch '/items/:id/deactivate', to: 'items#update'
   delete '/items/:id', to: 'items#destroy'
 
   get '/merchants/:merchant_id/items', to: 'items#index'
